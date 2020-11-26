@@ -98,7 +98,7 @@ class Calculator extends Component {
             if (result.toString().indexOf("Infinity") > -1) {
                 this.showErrorAndReset("Division by zero");
             } else {
-                this.setState({ display: result, calculateButtonPressed: "true", previousExpression: "= " + this.state.display });
+                this.setState({ display: result, calculateButtonPressed: "true", previousExpression: this.state.display + " ="});
             }
         } else {
             this.showErrorAndReset("Expression is not valid");
