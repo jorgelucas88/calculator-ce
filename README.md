@@ -8,7 +8,6 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 - Simple calculations using parentesis and decimal numbers
 
 **To be done**
-- Two line display
 - Improve interface/Bootstrap
 - Unit tests
 - Type in the active calculator using keyboard
