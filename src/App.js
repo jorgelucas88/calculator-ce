@@ -1,6 +1,5 @@
 import './assets/css/App.css';
 import './assets/css/Calculator.css';
-import logo from './assets/img/logo.svg';
 
 import Calculator from './components/calculator/Calculator'
 
@@ -31,29 +30,15 @@ function App() {
 
           <section className="jumbotron text-center">
             <div className="container">
-              <h1>Lorem ipsum calculators</h1>
-              <p className="lead text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+              <h1>Lorem ipsum <strong><i>calculator</i></strong></h1>
+              <p className="lead text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do <strong>eiusmod tempor incididunt</strong> ut labore et dolore magna aliqua.</p>
             </div>
           </section>
 
           <div className="calculator py-5 bg-light">
             <div className="container">
-              <div className="row">                
-                <div className="col-md-4">
-                  <div className="card mb-4 shadow-sm">
-                    <section className="components">
-                      <Calculator />
-                    </section>
-                  </div>
-                </div>
-
-                <div className="col-md-4">
-                  <div className="card mb-4 shadow-sm">
-                    <section className="components">
-                      <Calculator />
-                    </section>
-                  </div>
-                </div>
+              <div className="row justify-content-center">                
+                
 
                 <div className="col-md-4">
                   <div className="card mb-4 shadow-sm">

@@ -32,23 +32,43 @@ class Calculator extends Component {
     }
 
     handleOperatorClick(value) {
+        var lastCharacter = this.state.display.toString().charAt(this.state.display.toString().length - 1);
+        
         if (value === "x") {
             value = "*";
         }
-        if (this.state.display === "0" && (value === "(")) {
-            this.setState({ display: value, calculateButtonPressed: "false" });
-            return;
-        } else if (this.state.display === "0" && (value === ")")) {
-            return;
-        } else if (this.state.calculateButtonPressed === "true" && value === ".") {
-            if (this.state.display.toString().indexOf(".") > -1) {
-                return;
-            }
-        } else if (value === "." && this.state.display.toString().charAt(this.state.display.length-1) == ".") {
-            return;
-        }
 
-        this.setState({ display: this.state.display.toString().concat(value), calculateButtonPressed: "false", previousExpression: "0" });
+        // if last character is a dot but coming character is not a number, we concatenate a zero
+       if ((lastCharacter === ".") && (!this.isNumber(value))) {
+           value = "0" + value;
+       }
+
+       this.setState({ display: this.state.display.toString().concat(value), calculateButtonPressed: "false", previousExpression: "0" });
+    }
+
+    isNumber(value) {
+        return !this.isOperator(value) && (value !== ".") && !this.isParentesis(value);
+    }
+
+    isParentesis(value) {
+        if (value === "(" || value === ")") {
+            return true;
+        }
+        return false;
+    }
+    isOperator(value) {
+        if (value === "+" || value === "-" || value === "*" || value === "/") {
+            return true;
+        }
+        return false;
+    }
+
+    lastCharacterIs(expression, value) {
+        var lastCharacter = expression.toString().charAt(expression.length-1);
+        if (lastCharacter === value) {
+            return true;
+        }
+        return false;
     }
 
     clear() {
@@ -78,7 +98,7 @@ class Calculator extends Component {
             if (result.toString().indexOf("Infinity") > -1) {
                 this.showErrorAndReset("Division by zero");
             } else {
-                this.setState({ display: result, calculateButtonPressed: "true", previousExpression: this.state.display });
+                this.setState({ display: result, calculateButtonPressed: "true", previousExpression: "= " + this.state.display });
             }
         } else {
             this.showErrorAndReset("Expression is not valid");
@@ -156,19 +176,38 @@ class Calculator extends Component {
                     </div>
                 </div>
                 <div className="row calc-row-margin-top">
-                    <div className="col-4">
+                    <div className="col">
                         <button type="button" className="btn btn-block btn-outline-warning" onClick={() => this.clear()}>CE</button>
                     </div>
-                    <div className="col-4">
-                        <button type="button" className="btn btn-block btn-outline-primary" onClick={() => this.handleOperatorClick('.')}>.</button>
+                    <div className="col">
+                        <button type="button" className="btn btn-block btn-outline-info" onClick={() => this.handleOperatorClick('.')}>.</button>
                     </div>
-                    <div className="col-4">
-                        <button type="button" className="btn btn-block btn-outline-primary" onClick={() => this.calculate()}>=</button>
+                    <div className="col">
+                        <button type="button" className="btn btn-block btn-outline-danger" onClick={() => this.backSpace()}>
+                            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-backspace-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" d="M15.683 3a2 2 0 0 0-2-2h-7.08a2 2 0 0 0-1.519.698L.241 7.35a1 1 0 0 0 0 1.302l4.843 5.65A2 2 0 0 0 6.603 15h7.08a2 2 0 0 0 2-2V3zM5.829 5.854a.5.5 0 1 1 .707-.708l2.147 2.147 2.146-2.147a.5.5 0 1 1 .707.708L9.39 8l2.146 2.146a.5.5 0 0 1-.707.708L8.683 8.707l-2.147 2.147a.5.5 0 0 1-.707-.708L7.976 8 5.829 5.854z"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <div className="col">
+                        <button type="button" className="btn btn-block btn-outline-success" onClick={() => this.calculate()}>=</button>
                     </div>
                 </div>
             </div>
         );
     }
+
+    backSpace() {
+        var currentDisplay = this.state.display.toString();
+        if (currentDisplay === "0") { 
+            return;
+        } else if (this.isParentesis(currentDisplay) || this.isOperator(currentDisplay) || currentDisplay.length === 1) {
+            this.setState({ display: "0" });
+            return;
+        }
+        this.setState({ display: currentDisplay.substring(0, currentDisplay.length - 1) });
+    }
+
     getCalculatorHTML() {
         return (
             <div>
