@@ -16,11 +16,11 @@ function App() {
 
       <body>
         <header>
-          <div class="navbar navbar-dark bg-dark shadow-sm">
-            <div class="container d-flex justify-content-between">
-              <a href="#" class="navbar-brand d-flex align-items-center">
-                <svg width="30px" height="30px" viewBox="0 0 16 16" class="bi bi-calculator-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                  <path fill-rule="evenodd" d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2zm2 .5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5h-7a.5.5 0 0 1-.5-.5v-2zm0 4a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zM4.5 9a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1zM4 12.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zM7.5 6a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1zM7 9.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm.5 2.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1zM10 6.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm.5 2.5a.5.5 0 0 0-.5.5v4a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-4a.5.5 0 0 0-.5-.5h-1z" />
+          <div className="navbar navbar-dark bg-dark shadow-sm">
+            <div className="container d-flex justify-content-between">
+              <a href="#" className="navbar-brand d-flex align-items-center">
+                <svg width="30px" height="30px" viewBox="0 0 16 16" className="bi bi-calculator-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                  <path fillRule="evenodd" d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2zm2 .5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5h-7a.5.5 0 0 1-.5-.5v-2zm0 4a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zM4.5 9a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1zM4 12.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zM7.5 6a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1zM7 9.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm.5 2.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1zM10 6.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm.5 2.5a.5.5 0 0 0-.5.5v4a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-4a.5.5 0 0 0-.5-.5h-1z" />
                 </svg>
               </a>
             </div>
@@ -29,36 +29,50 @@ function App() {
 
         <main role="main">
 
-          <section class="jumbotron text-center">
-            <div class="container">
-              <h1>A simple calculator below</h1>
-              <p class="lead text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-              <p>
-                <a href="#" class="btn btn-primary my-2">Thats great. I want more calculators</a>
-              </p>
+          <section className="jumbotron text-center">
+            <div className="container">
+              <h1>Lorem ipsum calculators</h1>
+              <p className="lead text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
             </div>
           </section>
 
-
-          <div class="album py-5 bg-light">
-            <div class="container">
-              <div class="row">                
-                <div class="col-md-4">
-                  <div class="card mb-4 shadow-sm">
+          <div className="calculator py-5 bg-light">
+            <div className="container">
+              <div className="row">                
+                <div className="col-md-4">
+                  <div className="card mb-4 shadow-sm">
                     <section className="components">
                       <Calculator />
                     </section>
                   </div>
                 </div>
-            
+
+                <div className="col-md-4">
+                  <div className="card mb-4 shadow-sm">
+                    <section className="components">
+                      <Calculator />
+                    </section>
+                  </div>
+                </div>
+
+                <div className="col-md-4">
+                  <div className="card mb-4 shadow-sm">
+                    <section className="components">
+                      <Calculator />
+                    </section>
+                  </div>
+                </div>
+                
               </div>
             </div>
           </div>
+          
+
         </main>
 
-        <footer class="text-muted">
-          <div class="container">
-            <p class="float-right">
+        <footer className="text-muted">
+          <div className="container">
+            <p className="float-right">
               <a href="#">Back to top</a>
             </p>
             <p>New to Bootstrap? <a href="https://getbootstrap.com/">Visit the homepage</a> or read our <a href="/docs/4.5/getting-started/introduction/">getting started guide</a>.</p>
@@ -68,5 +82,6 @@ function App() {
     </html>
   );
 }
+
 
 export default App;

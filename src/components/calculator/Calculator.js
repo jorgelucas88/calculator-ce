@@ -88,82 +88,82 @@ class Calculator extends Component {
 
     getCalculatorUIBootstrap() {
         return (
-            <div class="container calculator-body">
-                <div class="row">
-                    <div class="col">
+            <div className="container calculator-body">
+                <div className="row">
+                    <div className="col">
                         <p className="calculation-previous-expression" colSpan="4">{this.state.previousExpression}</p>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col">
+                <div className="row">
+                    <div className="col">
                         <p className="calculation-result" colSpan="4">{this.state.display}</p>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col">
-                        <button type="button" class="btn btn-block btn-outline-secondary" onClick={() => this.handleNumberClick('7')}>7</button>
+                <div className="row calc-row-margin-top">
+                    <div className="col">
+                        <button type="button" className="btn btn-block btn-outline-secondary" onClick={() => this.handleNumberClick('7')}>7</button>
                     </div>
-                    <div class="col">
-                        <button type="button" class="btn btn-block btn-outline-secondary" onClick={() => this.handleNumberClick('8')}>8</button>
+                    <div className="col">
+                        <button type="button" className="btn btn-block btn-outline-secondary" onClick={() => this.handleNumberClick('8')}>8</button>
                     </div>
-                    <div class="col">
-                        <button type="button" class="btn btn-block btn-outline-secondary" onClick={() => this.handleNumberClick('9')}>9</button>
+                    <div className="col">
+                        <button type="button" className="btn btn-block btn-outline-secondary" onClick={() => this.handleNumberClick('9')}>9</button>
                     </div>
-                    <div class="col">
-                        <button type="button" class="btn btn-block btn-outline-primary" onClick={() => this.handleOperatorClick('+')}>+</button>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col">
-                        <button type="button" class="btn btn-block btn-outline-secondary" onClick={() => this.handleNumberClick('4')}>4</button>
-                    </div>
-                    <div class="col">
-                        <button type="button" class="btn btn-block btn-outline-secondary" onClick={() => this.handleNumberClick('5')}>5</button>
-                    </div>
-                    <div class="col">
-                        <button type="button" class="btn btn-block btn-outline-secondary" onClick={() => this.handleNumberClick('6')}>6</button>
-                    </div>
-                    <div class="col">
-                        <button type="button" class="btn btn-block btn-outline-primary" onClick={() => this.handleOperatorClick('-')}>-</button>
+                    <div className="col">
+                        <button type="button" className="btn btn-block btn-outline-primary" onClick={() => this.handleOperatorClick('+')}>+</button>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col">
-                        <button type="button" class="btn btn-block btn-outline-secondary" onClick={() => this.handleNumberClick('1')}>1</button>
+                <div className="row calc-row-margin-top">
+                    <div className="col">
+                        <button type="button" className="btn btn-block btn-outline-secondary" onClick={() => this.handleNumberClick('4')}>4</button>
                     </div>
-                    <div class="col">
-                        <button type="button" class="btn btn-block btn-outline-secondary" onClick={() => this.handleNumberClick('2')}>2</button>
+                    <div className="col">
+                        <button type="button" className="btn btn-block btn-outline-secondary" onClick={() => this.handleNumberClick('5')}>5</button>
                     </div>
-                    <div class="col">
-                        <button type="button" class="btn btn-block btn-outline-secondary" onClick={() => this.handleNumberClick('3')}>3</button>
+                    <div className="col">
+                        <button type="button" className="btn btn-block btn-outline-secondary" onClick={() => this.handleNumberClick('6')}>6</button>
                     </div>
-                    <div class="col">
-                        <button type="button" class="btn btn-block btn-outline-primary" onClick={() => this.handleOperatorClick('x')}>x</button>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col">
-                        <button type="button" class="btn btn-block btn-outline-secondary">(</button>
-                    </div>
-                    <div class="col">
-                        <button type="button" class="btn btn-block btn-outline-secondary" onClick={() => this.handleNumberClick('0')}>0</button>
-                    </div>
-                    <div class="col">
-                        <button type="button" class="btn btn-block btn-outline-secondary">)</button>
-                    </div>
-                    <div class="col">
-                        <button type="button" class="btn btn-block btn-outline-primary" onClick={() => this.handleOperatorClick('/')}>/</button>
+                    <div className="col">
+                        <button type="button" className="btn btn-block btn-outline-primary" onClick={() => this.handleOperatorClick('-')}>-</button>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-4">
-                        <button type="button" class="btn btn-block btn-outline-warning" onClick={() => this.clear()}>CE</button>
+                <div className="row calc-row-margin-top">
+                    <div className="col">
+                        <button type="button" className="btn btn-block btn-outline-secondary" onClick={() => this.handleNumberClick('1')}>1</button>
                     </div>
-                    <div class="col-4">
-                        <button type="button" class="btn btn-block btn-outline-primary" onClick={() => this.handleOperatorClick('.')}>.</button>
+                    <div className="col">
+                        <button type="button" className="btn btn-block btn-outline-secondary" onClick={() => this.handleNumberClick('2')}>2</button>
                     </div>
-                    <div class="col-4">
-                        <button type="button" class="btn btn-block btn-outline-primary" onClick={() => this.calculate()}>=</button>
+                    <div className="col">
+                        <button type="button" className="btn btn-block btn-outline-secondary" onClick={() => this.handleNumberClick('3')}>3</button>
+                    </div>
+                    <div className="col">
+                        <button type="button" className="btn btn-block btn-outline-primary" onClick={() => this.handleOperatorClick('x')}>x</button>
+                    </div>
+                </div>
+                <div className="row calc-row-margin-top">
+                    <div className="col">
+                        <button type="button" className="btn btn-block btn-outline-secondary" onClick={() => this.handleOperatorClick('(')}>(</button>
+                    </div>
+                    <div className="col">
+                        <button type="button" className="btn btn-block btn-outline-secondary" onClick={() => this.handleNumberClick('0')}>0</button>
+                    </div>
+                    <div className="col">
+                        <button type="button" className="btn btn-block btn-outline-secondary" onClick={() => this.handleOperatorClick(')')}>)</button>
+                    </div>
+                    <div className="col">
+                        <button type="button" className="btn btn-block btn-outline-primary" onClick={() => this.handleOperatorClick('/')}>/</button>
+                    </div>
+                </div>
+                <div className="row calc-row-margin-top">
+                    <div className="col-4">
+                        <button type="button" className="btn btn-block btn-outline-warning" onClick={() => this.clear()}>CE</button>
+                    </div>
+                    <div className="col-4">
+                        <button type="button" className="btn btn-block btn-outline-primary" onClick={() => this.handleOperatorClick('.')}>.</button>
+                    </div>
+                    <div className="col-4">
+                        <button type="button" className="btn btn-block btn-outline-primary" onClick={() => this.calculate()}>=</button>
                     </div>
                 </div>
             </div>
