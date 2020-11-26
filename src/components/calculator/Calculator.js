@@ -6,6 +6,7 @@ class Calculator extends Component {
         super(props);
         this.state = {
             display: "0",
+            previousExpression: "0",
             calculateButtonPressed: "false"
         }
     }
@@ -24,7 +25,7 @@ class Calculator extends Component {
 
     handleNumberClick(value) {
         if (this.state.display === "0" || this.state.calculateButtonPressed === "true") {
-            this.setState({display: value, calculateButtonPressed: "false"});
+            this.setState({display: value, calculateButtonPressed: "false", previousExpression: "0"});
         } else {
             this.setState({display: this.state.display.toString().concat(value)});
         }
@@ -45,7 +46,7 @@ class Calculator extends Component {
             }
         }
         
-        this.setState({display: this.state.display.toString().concat(value), calculateButtonPressed: "false"});
+        this.setState({display: this.state.display.toString().concat(value), calculateButtonPressed: "false", previousExpression: "0"});
     }
         
     clear() {
@@ -75,7 +76,7 @@ class Calculator extends Component {
             if (result.toString().indexOf("Infinity") > -1) {
                 this.showErrorAndReset("Division by zero");
             } else {
-                this.setState({display: result, calculateButtonPressed: "true"});
+                this.setState({display: result, calculateButtonPressed: "true", previousExpression: this.state.display});
             }
         } else {
             this.showErrorAndReset("Expression is not valid");
@@ -86,6 +87,9 @@ class Calculator extends Component {
     getCalculatorUI() {
         return (
             <table className="calculator-body">
+                <tr>
+                    <td className="calculation-previous-expression" colspan="4">{this.state.previousExpression}</td>
+                </tr>
                 <tr>
                     <td className="calculation-result" colspan="4">{this.state.display}</td>
                 </tr>

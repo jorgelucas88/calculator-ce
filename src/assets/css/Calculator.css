@@ -19,10 +19,13 @@
   border-radius: 15px;
 }
 
-
-.calculation-result {
+.calculation-result, .calculation-previous-expression {
   text-align: right;
   background-color: #a3aab8;
   color: black;
   font-size: 20px;
+}
+
+.calculation-previous-expression {
+  font-style: italic;
 }
