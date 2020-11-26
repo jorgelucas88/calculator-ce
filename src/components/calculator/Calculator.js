@@ -5,8 +5,15 @@ class Calculator extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            display: "0"
+            display: "0",
+            calculateButtonPressed: "false"
         }
+    }
+
+    componentDidMount() {
+    }
+  
+    componentWillUnmount() {
     }
 
     getButton(element) {
@@ -16,8 +23,8 @@ class Calculator extends Component {
     }
 
     handleNumberClick(value) {
-        if (this.state.display === "0") {
-            this.setState({display: value});
+        if (this.state.display === "0" || this.state.calculateButtonPressed === "true") {
+            this.setState({display: value, calculateButtonPressed: "false"});
         } else {
             this.setState({display: this.state.display.toString().concat(value)});
         }
@@ -27,16 +34,26 @@ class Calculator extends Component {
         if (value === "x") {
             value = "*";
         }
-        if (this.state.display === "0" && (value == "(")) {
-            this.setState({display: value});
+        if (this.state.display === "0" && (value === "(")) {
+            this.setState({display: value, calculateButtonPressed: "false"});
             return;
-        } else if (this.state.display === "0" && (value == ")")) {
+        } else if (this.state.display === "0" && (value === ")")) {
             return;
+        } else if (this.state.calculateButtonPressed === "true" && value === ".") {
+            if (this.state.display.toString().indexOf(".") > -1) {
+                return;
+            }
         }
         
-        this.setState({display: this.state.display.toString().concat(value)});
+        this.setState({display: this.state.display.toString().concat(value), calculateButtonPressed: "false"});
     }
-
+        
+    clear() {
+        this.setState(() => ({
+            display: "0", calculateButtonPressed: "false"
+        }));
+    }
+    
     isValidExpression(expression) {
         try {
             eval(expression);
@@ -46,12 +63,8 @@ class Calculator extends Component {
         }
     }
 
-    clear() {
-        this.setState({display: "0"});
-    }
-
     showErrorAndReset(msg) {
-        this.setState({display: "0"});
+        this.setState({display: "0", calculateButtonPressed: "false"});
         alert("error: " + msg);
     }
 
@@ -59,10 +72,10 @@ class Calculator extends Component {
 
         if (this.isValidExpression(this.state.display)) {
             var result = eval(this.state.display);
-            if (result == "Infinity") {
+            if (result.toString().indexOf("Infinity") > -1) {
                 this.showErrorAndReset("Division by zero");
             } else {
-                this.setState({display: result});
+                this.setState({display: result, calculateButtonPressed: "true"});
             }
         } else {
             this.showErrorAndReset("Expression is not valid");
@@ -112,7 +125,6 @@ class Calculator extends Component {
     render() {
         return (
             <div>
-                <h1></h1>
                 {this.getCalculatorUI()}
             </div>
         );
