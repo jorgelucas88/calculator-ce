@@ -1,5 +1,4 @@
-import React, { Component } from 'react';
-import Draggable from '../draggable/Draggable'
+import Draggable from '../draggable/Draggable.js'
 
 import '../../assets/css/Calculator.css';
 
@@ -11,7 +10,7 @@ class Calculator extends Draggable {
             display: "0",
             previousExpression: "0",
             calculateButtonPressed: "false",
-            pos: {x:0,y:0} // parent definition of this attribute is working             
+            pos: {x:0,y:0} // parent definition of this attribute is not working             
         };
     }
 
