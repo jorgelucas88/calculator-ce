@@ -1,4 +1,4 @@
-import Draggable from '../draggable/Draggable.js'
+import Draggable from './components/draggable/Draggable.js'
 
 import '../../assets/css/Calculator.css';
 
