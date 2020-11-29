@@ -2,6 +2,20 @@ import './assets/css/App.css';
 
 import Calculator from './components/calculator/Calculator'
 
+function instantiateNewCalculatorComponent() {
+
+}
+
+function getCalculator() {
+  return (
+    <div className="col-md-4">               
+        <section className="components">
+          <Calculator />
+        </section>
+    </div>
+  );
+}
+
 function App() {
   return (
     <html>
@@ -27,8 +41,9 @@ function App() {
 
           <section className="jumbotron text-center">
             <div className="container">
-              <h1>Lorem ipsum <strong>draggable <i>calculator</i></strong></h1>
+              <h1>Lorem ipsum <strong>draggable (on pc) <i>calculator</i></strong></h1>
               <p className="lead text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do <strong>eiusmod tempor incididunt</strong> ut labore et dolore magna aliqua.</p>
+
             </div>
           </section>
 
@@ -37,11 +52,7 @@ function App() {
               <div className="row justify-content-center">
 
                 {/** */}
-                <div className="col-md-4">               
-                    <section className="components">
-                      <Calculator />
-                    </section>
-                </div>
+                {getCalculator()}
 
               </div>
             </div>
