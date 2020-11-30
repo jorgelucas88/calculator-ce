@@ -1,4 +1,4 @@
-import Draggable from './components/draggable/Draggable.js'
+import Draggable from '../draggable/Draggable'
 
 import '../../assets/css/Calculator.css';
 
@@ -48,24 +48,16 @@ class Calculator extends Draggable {
     }
 
     isParentesis(value) {
-        if (value === "(" || value === ")") {
-            return true;
-        }
-        return false;
+        return (value === "(" || value === ")" ? true : false);
     }
+
     isOperator(value) {
-        if (value === "+" || value === "-" || value === "*" || value === "/") {
-            return true;
-        }
-        return false;
+        return (value === "+" || value === "-" || value === "*" || value === "/" ? true : false);
     }
 
     lastCharacterIs(expression, value) {
         var lastCharacter = expression.toString().charAt(expression.length-1);
-        if (lastCharacter === value) {
-            return true;
-        }
-        return false;
+        return (lastCharacter === value ? true : false);
     }
 
     clear() {
