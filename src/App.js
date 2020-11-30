@@ -1,6 +1,5 @@
 import './assets/css/App.css';
 
-import Draggable from './components/draggable/Draggable'
 import Calculator from './components/calculator/Calculator'
 
 function getCalculator() {
